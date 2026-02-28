@@ -32,8 +32,8 @@ const siteContent = {
   // ============================
   hero: {
     title:        { ro: "BIEA BOXING GYM",                                    en: "BIEA BOXING GYM" },
-    subtitle:     { ro: "Pasiune și excelență în boxul profesionist",          en: "Passion and excellence in professional boxing" },
-    cta:          { ro: "Contactează-ne",                                      en: "Contact Us" },
+    subtitle:     { ro: "Sala de box nr. 1 din Timișoara — Box, Kickboxing, MMA", en: "Timișoara's #1 boxing gym — Boxing, Kickboxing, MMA" },
+    cta:          { ro: "Începe antrenamentul",                                en: "Start Training" },
     ctaSecondary: { ro: "Descoperă mai mult",                                  en: "Discover More" },
   },
 
@@ -42,14 +42,14 @@ const siteContent = {
   // ============================
   about: {
     tag:    { ro: "Despre Noi",                  en: "About Us" },
-    title:  { ro: "Mai mult decât o sală de box", en: "More than a boxing gym" },
+    title:  { ro: "Mai mult decât o sală de box în Timișoara", en: "More than a boxing gym in Timișoara" },
     story1: {
-      ro: "Fondată în 2014 de Flavius și Roxana Biea, Biea Boxing reprezintă pasiune și excelență în boxul profesionist. Între 2019-2023, evenimentele noastre au fost singurele gale recunoscute la nivel național și licențiate internațional din România.",
-      en: "Founded in 2014 by Flavius and Roxana Biea, Biea Boxing represents passion and excellence in professional boxing. Between 2019-2023, our events were the only nationally recognized and internationally licensed galas in Romania.",
+      ro: "Fondată în 2014 de campionul național Flavius Biea și Roxana Biea, Biea Boxing este cea mai importantă sală de box din Timișoara. Între 2019-2023, evenimentele Biea Promotion au fost singurele gale de box recunoscute la nivel național și licențiate internațional din România.",
+      en: "Founded in 2014 by national champion Flavius Biea and Roxana Biea, Biea Boxing is Timișoara's premier boxing gym. Between 2019-2023, Biea Promotion events were the only nationally recognized and internationally licensed boxing galas in Romania.",
     },
     story2: {
-      ro: "Biea Boxing Gym este o sală profesionistă de antrenament care oferă cursuri de box, kickboxing, MMA și autoapărare pentru toate nivelurile — de la începători la avansați.",
-      en: "Biea Boxing Gym is a professional training facility offering boxing, kickboxing, MMA, and self-defense classes for all skill levels — from beginners to advanced.",
+      ro: "Biea Boxing Gym este sala de box profesionistă din Timișoara care oferă cursuri de box, kickboxing, MMA, autoapărare și programe pentru copii. Indiferent dacă ești începător sau boxer avansat, antrenorii noștri te ghidează către obiectivele tale.",
+      en: "Biea Boxing Gym is Timișoara's professional boxing facility offering boxing, kickboxing, MMA, self-defense, and kids programs. Whether you're a complete beginner or an advanced fighter, our trainers guide you towards your goals.",
     },
   },
 
@@ -57,12 +57,12 @@ const siteContent = {
   // SERVICES
   // ============================
   services: {
-    boxing:      { name: { ro: "Box",          en: "Boxing" },       desc: { ro: "Antrenament profesionist de box pentru toate nivelurile.",                  en: "Professional boxing training for all levels." } },
-    kickboxing:  { name: { ro: "Kickboxing",   en: "Kickboxing" },   desc: { ro: "Tehnici de lovire cu picioarele și pumnii combinate.",                      en: "Combined kicking and punching striking techniques." } },
-    mma:         { name: { ro: "MMA",          en: "MMA" },          desc: { ro: "Arte marțiale mixte — combinație completă de stiluri de luptă.",            en: "Mixed martial arts — a complete combination of fighting styles." } },
-    selfDefense: { name: { ro: "Autoapărare",  en: "Self-Defense" }, desc: { ro: "Cursuri practice de autoapărare pentru situații reale.",                    en: "Practical self-defense courses for real-life situations." } },
-    kids:        { name: { ro: "Copii",        en: "Kids" },         desc: { ro: "Programe specializate pentru copii și juniori.",                            en: "Specialized programs for children and juniors." } },
-    corporate:   { name: { ro: "Corporate",    en: "Corporate" },    desc: { ro: "Sesiuni de team-building pentru companii.",                                 en: "Team-building sessions for companies." } },
+    boxing:      { name: { ro: "Box",          en: "Boxing" },       desc: { ro: "Cursuri de box în Timișoara pentru începători și avansați. Antrenament profesionist sub îndrumarea campionului Flavius Biea.", en: "Boxing classes in Timișoara for beginners and advanced. Professional training under champion Flavius Biea." } },
+    kickboxing:  { name: { ro: "Kickboxing",   en: "Kickboxing" },   desc: { ro: "Cursuri de kickboxing în Timișoara. Tehnici de lovire cu picioarele și pumnii pentru fitness și competiție.", en: "Kickboxing classes in Timișoara. Kicking and punching techniques for fitness and competition." } },
+    mma:         { name: { ro: "MMA",          en: "MMA" },          desc: { ro: "Antrenament MMA în Timișoara — arte marțiale mixte cu antrenori experimentați.", en: "MMA training in Timișoara — mixed martial arts with experienced trainers." } },
+    selfDefense: { name: { ro: "Autoapărare",  en: "Self-Defense" }, desc: { ro: "Cursuri de autoapărare în Timișoara. Tehnici practice pentru situații reale, accesibile oricui.", en: "Self-defense classes in Timișoara. Practical techniques for real-life situations, accessible to everyone." } },
+    kids:        { name: { ro: "Box Copii",    en: "Kids Boxing" },  desc: { ro: "Box pentru copii în Timișoara. Programe specializate pentru copii și juniori într-un mediu sigur și distractiv.", en: "Kids boxing in Timișoara. Specialized programs for children and juniors in a safe, fun environment." } },
+    corporate:   { name: { ro: "Corporate",    en: "Corporate" },    desc: { ro: "Team-building prin box în Timișoara. Sesiuni corporate unice pentru companii care vor altceva.", en: "Boxing team-building in Timișoara. Unique corporate sessions for companies looking for something different." } },
   },
 
   // ============================
@@ -207,7 +207,7 @@ const siteContent = {
   // ============================
   contact: {
     tag:                { ro: "Contact",                 en: "Contact" },
-    title:              { ro: "Hai la antrenament",       en: "Join the training" },
+    title:              { ro: "Hai la antrenament în Timișoara", en: "Join the training in Timișoara" },
     addressLabel:       { ro: "Adresă",                  en: "Address" },
     address:            { ro: "Aleea Viilor Nr. 12A, Etaj 1, Timișoara", en: "Aleea Viilor Nr. 12A, 1st Floor, Timișoara" },
     phoneLabel:         { ro: "Telefon",                 en: "Phone" },
@@ -225,7 +225,7 @@ const siteContent = {
   // FOOTER
   // ============================
   footer: {
-    tagline:     { ro: "Pasiune și excelență în boxul profesionist.", en: "Passion and excellence in professional boxing." },
+    tagline:     { ro: "Sala de box profesionistă din Timișoara — Box, Kickboxing, MMA.", en: "Timișoara's professional boxing gym — Boxing, Kickboxing, MMA." },
     navTitle:    { ro: "Navigare",     en: "Navigation" },
     socialTitle: { ro: "Social Media", en: "Social Media" },
     rights:      { ro: "Toate drepturile rezervate.", en: "All rights reserved." },
