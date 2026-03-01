@@ -982,6 +982,322 @@ button {
 }
 
 /* ========================================
+   GALLERY PAGE
+   ======================================== */
+.gallery-hero {
+  padding-top: 140px;
+  padding-bottom: 40px;
+}
+
+.gallery-hero__subtitle {
+  text-align: center;
+  color: var(--color-gray-400);
+  font-size: 1.1rem;
+  margin-top: 16px;
+  font-weight: 300;
+}
+
+/* Filter buttons */
+.gallery__filters {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.gallery__filter {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 28px;
+  border-radius: 30px;
+  border: 1px solid var(--color-gray-600);
+  color: var(--color-gray-400);
+  background: transparent;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.gallery__filter:hover {
+  border-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.gallery__filter--active {
+  background-color: var(--color-red);
+  border-color: var(--color-red);
+  color: var(--color-white);
+}
+
+/* Gallery grid */
+.gallery {
+  padding: 40px 0 100px;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  grid-auto-rows: 280px;
+}
+
+.gallery__item {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.gallery__item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.gallery__item--tall {
+  grid-row: span 2;
+}
+
+.gallery__item--wide {
+  grid-column: span 2;
+}
+
+.gallery__item--hidden {
+  display: none;
+}
+
+.gallery__thumb {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.gallery__item:hover .gallery__thumb img {
+  transform: scale(1.05);
+}
+
+/* Video play overlay */
+.gallery__thumb--video::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background var(--transition);
+}
+
+.gallery__item:hover .gallery__thumb--video::after {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+/* Placeholder styles */
+.gallery__placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-surface-hover) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gallery__placeholder svg {
+  width: 48px;
+  height: 48px;
+  color: var(--color-gray-600);
+}
+
+.gallery__placeholder span {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--font-heading);
+}
+
+.gallery__placeholder--video svg {
+  color: var(--color-red);
+}
+
+/* Coming soon */
+.gallery__coming-soon {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px 24px;
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.gallery__coming-soon p {
+  color: var(--color-gray-400);
+  font-size: 1.05rem;
+  margin-bottom: 24px;
+}
+
+.gallery__social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.gallery__social a {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-bg);
+  color: var(--color-gray-400);
+  transition: all var(--transition);
+}
+
+.gallery__social a:hover {
+  color: var(--color-white);
+  background-color: var(--color-red);
+  transform: translateY(-3px);
+}
+
+.gallery__social svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background-color: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+}
+
+.lightbox--open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox__content {
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+.lightbox__img {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--border-radius-sm);
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  font-size: 2.5rem;
+  color: var(--color-white);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2001;
+  transition: color var(--transition);
+  line-height: 1;
+}
+
+.lightbox__close:hover {
+  color: var(--color-red);
+}
+
+.lightbox__prev,
+.lightbox__next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  cursor: pointer;
+  padding: 16px 12px;
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition);
+  z-index: 2001;
+}
+
+.lightbox__prev:hover,
+.lightbox__next:hover {
+  background: rgba(220, 38, 38, 0.5);
+}
+
+.lightbox__prev {
+  left: 16px;
+}
+
+.lightbox__next {
+  right: 16px;
+}
+
+/* ========================================
+   GALLERY RESPONSIVE — TABLET
+   ======================================== */
+@media (max-width: 1024px) {
+  .gallery__grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 240px;
+  }
+
+  .gallery__item--wide {
+    grid-column: span 1;
+  }
+}
+
+/* ========================================
+   GALLERY RESPONSIVE — MOBILE
+   ======================================== */
+@media (max-width: 768px) {
+  .gallery-hero {
+    padding-top: 110px;
+    padding-bottom: 24px;
+  }
+
+  .gallery__grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .gallery__item--tall {
+    grid-row: span 1;
+  }
+
+  .gallery__item--wide {
+    grid-column: span 1;
+  }
+
+  .lightbox__prev,
+  .lightbox__next {
+    padding: 12px 8px;
+    font-size: 1.5rem;
+  }
+}
+
+/* ========================================
    SCROLL REVEAL ANIMATIONS
    ======================================== */
 .reveal {

@@ -24,6 +24,7 @@ const siteContent = {
     schedule: { ro: "Program Clase", en: "Class Schedule" },
     trainers: { ro: "Antrenori",     en: "Trainers" },
     events:   { ro: "Evenimente",    en: "Events" },
+    gallery:  { ro: "Galerie",       en: "Gallery" },
     contact:  { ro: "Contact",       en: "Contact" },
   },
 
@@ -229,6 +230,21 @@ const siteContent = {
     navTitle:    { ro: "Navigare",     en: "Navigation" },
     socialTitle: { ro: "Social Media", en: "Social Media" },
     rights:      { ro: "Toate drepturile rezervate.", en: "All rights reserved." },
+  },
+
+  // ============================
+  // GALLERY
+  // ============================
+  gallery: {
+    tag:              { ro: "Galerie",                   en: "Gallery" },
+    title:            { ro: "Foto & Video",              en: "Photos & Videos" },
+    subtitle:         { ro: "Momente din antrenamente, meciuri și gale de box", en: "Moments from training, fights and boxing galas" },
+    filterAll:        { ro: "Toate",                     en: "All" },
+    filterPhotos:     { ro: "Foto",                      en: "Photos" },
+    filterVideos:     { ro: "Video",                     en: "Videos" },
+    photoPlaceholder: { ro: "Foto în curând",            en: "Photo coming soon" },
+    videoPlaceholder: { ro: "Video în curând",           en: "Video coming soon" },
+    comingSoon:       { ro: "Conținut nou va fi adăugat în curând. Urmărește-ne pe social media!", en: "New content will be added soon. Follow us on social media!" },
   },
 
   // ============================
