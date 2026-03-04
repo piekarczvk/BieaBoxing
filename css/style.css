@@ -920,6 +920,7 @@ button {
   opacity: 0;
 }
 
+
 .hero__scroll-indicator {
   position: absolute;
   bottom: 32px;
@@ -1162,6 +1163,67 @@ button {
   font-size: 0.85rem;
   margin-top: 24px;
   font-style: italic;
+}
+
+/* ---- Mobile schedule list (hidden on desktop) ---- */
+.schedule__day-view {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .schedule__table-wrap {
+    display: none;
+  }
+
+  .schedule__table-outer::after {
+    display: none !important;
+  }
+
+  .schedule__scroll-hint {
+    display: none !important;
+  }
+
+  .schedule__day-view {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.schedule__list-day-name {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-gray-400);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.schedule__list-day {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.schedule__list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 8px;
+}
+
+.schedule__list-time {
+  font-size: 0.82rem;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.schedule__list-name {
+  font-weight: 600;
+  font-size: 0.9rem;
 }
 
 /* ========================================
