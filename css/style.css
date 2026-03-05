@@ -466,6 +466,17 @@ html.theme-electric .reveal--visible {
   transform: translateX(0);
 }
 
+html.theme-electric .about__photo-wrap {
+  border-radius: 0;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 4px solid var(--color-red);
+  box-shadow: 0 0 30px rgba(212, 255, 0, 0.06);
+}
+
+html.theme-electric .about__photo-wrap:hover .about__photo {
+  transform: none;
+}
+
 html.theme-electric .about__services .service-card {
   opacity: 0;
   transform: scale(1.15);
@@ -716,7 +727,7 @@ button {
 }
 
 .navbar__link {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -962,6 +973,26 @@ button {
   color: var(--color-gray-300);
   line-height: 1.8;
   margin-bottom: 20px;
+}
+
+.about__photo-wrap {
+  margin-top: 32px;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  border: 1px solid rgba(220, 38, 38, 0.25);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.about__photo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.about__photo-wrap:hover .about__photo {
+  transform: scale(1.03);
 }
 
 .about__services {

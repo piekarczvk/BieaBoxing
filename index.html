@@ -45,7 +45,7 @@
   <meta name="ICBM" content="45.7489, 21.2287">
 
   <!-- Theme & Favicon -->
-  <meta name="theme-color" content="#DC2626">
+  <meta name="theme-color" content="#D4FF00">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥊</text></svg>">
 
   <!-- Google Fonts — non-render-blocking async load -->
@@ -58,13 +58,8 @@
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Prevent flash of wrong theme -->
-  <script>
-    (function() {
-      var t = localStorage.getItem('biea-theme');
-      if (t === 'electric') document.documentElement.classList.add('theme-electric');
-    })();
-  </script>
+  <!-- Always apply electric theme -->
+  <script>document.documentElement.classList.add('theme-electric');</script>
 
   <!-- Schema.org Structured Data — LocalBusiness + SportsActivityLocation -->
   <script type="application/ld+json">
@@ -255,12 +250,6 @@
       </ul>
 
       <div class="navbar__actions">
-        <button class="theme-toggle" id="themeToggle" aria-label="Switch theme">
-          <span class="theme-toggle__icon" id="themeIcon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          </span>
-          <span class="theme-toggle__label" id="themeLabel">ELECTRIC</span>
-        </button>
 
         <button class="lang-toggle" id="langToggle" aria-label="Switch language">
           <span class="lang-toggle__option lang-toggle__option--active" data-lang="ro">RO</span>
@@ -312,6 +301,9 @@
           <p class="about__text" data-i18n="about.story2">
             Biea Boxing Gym este sala de box profesionistă din Timișoara care oferă cursuri de box, kickboxing, MMA, autoapărare și programe pentru copii. Indiferent dacă ești începător sau boxer avansat, antrenorii noștri te ghidează către obiectivele tale.
           </p>
+          <div class="about__photo-wrap">
+            <img src="images/about-us/IMG_8923.jpeg" alt="Biea Boxing Gym" class="about__photo" loading="lazy">
+          </div>
         </div>
 
         <div class="about__services reveal">
