@@ -1857,7 +1857,7 @@ html.theme-electric .events__hero-photo {
 }
 
 .contact__map {
-  margin-top: 12px;
+  margin-top: 48px;
   border-radius: var(--border-radius);
   overflow: hidden;
 }
@@ -2673,7 +2673,7 @@ html.theme-electric .events__hero-photo {
 
   /* Services */
   .about__services {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
   }
 
   /* Stats */
