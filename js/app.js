@@ -302,12 +302,12 @@ const App = {
 
       return `
         <tr>
-          <td>${fights.length - i}</td>
-          <td>${fight.date}</td>
-          <td>${fight.opponent}</td>
-          <td>${fight.record}</td>
-          <td>${fight.location}</td>
-          <td><span class="${resultClass}">${fight.method}</span></td>
+          <td data-label="#">${fights.length - i}</td>
+          <td data-label="Date">${fight.date}</td>
+          <td data-label="Opponent" class="fight-opponent">${fight.opponent}</td>
+          <td data-label="Record">${fight.record}</td>
+          <td data-label="Location">${fight.location}</td>
+          <td data-label="Result"><span class="${resultClass}">${fight.method}</span></td>
         </tr>`;
     }).join('');
   },

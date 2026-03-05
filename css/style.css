@@ -1524,6 +1524,38 @@ html.theme-electric .private__phone:hover {
   font-weight: 600;
 }
 
+/* Fight table — mobile: hide least important columns so table fits */
+@media (max-width: 640px) {
+  .events__table-wrap {
+    overflow-x: visible;
+  }
+
+  .events__table {
+    min-width: 0;
+  }
+
+  .events__table th,
+  .events__table td {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+  }
+
+  /* Hide #, Record, Location on small screens */
+  .events__table th:nth-child(1),
+  .events__table td:nth-child(1),
+  .events__table th:nth-child(4),
+  .events__table td:nth-child(4),
+  .events__table th:nth-child(5),
+  .events__table td:nth-child(5) {
+    display: none;
+  }
+
+  /* Opponent name can wrap */
+  .events__table td:nth-child(3) {
+    word-break: break-word;
+  }
+}
+
 /* ========================================
    CONTACT
    ======================================== */
