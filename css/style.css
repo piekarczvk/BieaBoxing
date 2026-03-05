@@ -191,6 +191,20 @@ html.theme-electric .hero__overlay {
   );
 }
 
+html.theme-electric .hero__overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.07) 3px,
+    rgba(0, 0, 0, 0.07) 4px
+  );
+  pointer-events: none;
+}
+
 html.theme-electric .hero__title {
   animation: electricPunchIn 0.8s ease-out forwards;
   -webkit-text-stroke: 2px var(--color-red);
@@ -258,6 +272,12 @@ html.theme-electric .btn--outline:hover {
   box-shadow: 0 0 20px rgba(212, 255, 0, 0.3);
 }
 
+html.theme-electric .btn:active {
+  transform: skewX(-5deg) scale(0.96) !important;
+  box-shadow: 0 0 30px rgba(212, 255, 0, 0.7), 0 0 60px rgba(212, 255, 0, 0.25) !important;
+  transition-duration: 0.05s;
+}
+
 /* --- SECTION HEADERS --- */
 html.theme-electric .section-header__tag {
   letter-spacing: 6px;
@@ -309,7 +329,8 @@ html.theme-electric .schedule__table td {
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-html.theme-electric .schedule__cell {
+html.theme-electric .schedule__cell,
+html.theme-electric .schedule__list-item {
   border-radius: 0;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -372,6 +393,12 @@ html.theme-electric .trainer-card__name {
 
 html.theme-electric .trainer-card__specialty {
   text-shadow: 0 0 8px rgba(212, 255, 0, 0.3);
+  transition: color var(--transition), text-shadow var(--transition);
+}
+
+html.theme-electric .trainer-card:hover .trainer-card__specialty {
+  color: var(--color-red);
+  text-shadow: 0 0 14px rgba(212, 255, 0, 0.9), 0 0 28px rgba(212, 255, 0, 0.4);
 }
 
 html.theme-electric .trainer-card__img-placeholder {
@@ -503,6 +530,8 @@ html.theme-electric .gallery__item {
 
 html.theme-electric .gallery__item:hover {
   box-shadow: 0 0 20px rgba(212, 255, 0, 0.2);
+  outline: 1px solid rgba(212, 255, 0, 0.5);
+  outline-offset: -1px;
 }
 
 html.theme-electric .gallery__coming-soon {
@@ -541,7 +570,16 @@ html.theme-electric .lightbox__placeholder {
 /* --- MOBILE --- */
 @media (max-width: 768px) {
   html.theme-electric .navbar__menu {
-    background-color: rgba(26, 26, 26, 0.98);
+    background-color: rgba(20, 20, 20, 0.97);
+    border-left: none;
+  }
+
+  html.theme-electric .navbar__menu .navbar__link {
+    border-bottom-color: rgba(212, 255, 0, 0.1);
+  }
+
+  html.theme-electric .navbar__menu .navbar__link--active {
+    text-shadow: 0 0 16px rgba(212, 255, 0, 0.7), 0 0 32px rgba(212, 255, 0, 0.3);
   }
 
   html.theme-electric .gallery__item {
@@ -560,6 +598,17 @@ html.theme-electric .lightbox__placeholder {
   html.theme-electric .btn--primary:hover,
   html.theme-electric .btn--outline:hover {
     transform: skewX(-3deg) translateY(-2px);
+  }
+
+  html.theme-electric .btn:active {
+    transform: skewX(-3deg) scale(0.96) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  html.theme-electric .hero__title {
+    letter-spacing: 3px;
+    -webkit-text-stroke-width: 1px;
   }
 }
 
@@ -672,7 +721,7 @@ button {
 
 .section-header__title {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
   letter-spacing: 2px;
   text-transform: uppercase;
   line-height: 1.1;
@@ -834,9 +883,13 @@ button {
 .navbar__hamburger {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   z-index: 1001;
-  padding: 4px;
+  padding: 10px;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .navbar__hamburger span {
@@ -1244,6 +1297,7 @@ button {
   justify-content: space-between;
   padding: 12px 14px;
   border-radius: 8px;
+  border-left-width: 4px;
 }
 
 .schedule__list-time {
@@ -1255,6 +1309,30 @@ button {
 .schedule__list-name {
   font-weight: 600;
   font-size: 0.9rem;
+}
+
+/* Today highlight — desktop column */
+.schedule__table th.col-today {
+  box-shadow: 0 0 14px color-mix(in srgb, var(--color-red) 50%, transparent);
+  outline: 2px solid var(--color-red);
+  outline-offset: -2px;
+}
+
+.schedule__table td.col-today {
+  background-color: color-mix(in srgb, var(--color-red) 7%, var(--color-bg));
+}
+
+/* Today highlight — mobile day card */
+.schedule__list-day--today {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--color-red) 40%, transparent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--color-red) 12%, transparent);
+}
+
+.schedule__list-day--today .schedule__list-day-name {
+  color: var(--color-red);
+  border-bottom-color: color-mix(in srgb, var(--color-red) 30%, transparent);
 }
 
 /* ========================================
@@ -1502,6 +1580,42 @@ html.theme-electric .events__hero-photo {
   color: var(--color-gray-400);
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+
+.events__table-outer {
+  position: relative;
+}
+
+.events__table-outer::after {
+  content: '';
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: calc(100% - 28px); /* leave room for scroll hint */
+  background: linear-gradient(to right, transparent, var(--color-surface));
+  pointer-events: none;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.events__scroll-hint {
+  display: none;
+  text-align: center;
+  color: var(--color-gray-400);
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .events__table-outer::after {
+    display: block;
+  }
+
+  .events__scroll-hint {
+    display: block;
+  }
 }
 
 .events__table-wrap {
@@ -2353,11 +2467,13 @@ html.theme-electric .events__hero-photo {
     right: -100%;
     width: 100%;
     height: 100vh;
-    background-color: rgba(10, 10, 10, 0.98);
+    background-color: rgba(10, 10, 10, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 32px;
+    gap: 0;
     transition: right var(--transition);
   }
 
@@ -2369,6 +2485,18 @@ html.theme-electric .events__hero-photo {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     letter-spacing: 3px;
+    width: 100%;
+    text-align: center;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+
+  .navbar__menu .navbar__link--active {
+    color: var(--color-red);
+  }
+
+  .navbar__menu .navbar__link--active::after {
+    display: none;
   }
 
   .navbar__hamburger {
@@ -2391,12 +2519,12 @@ html.theme-electric .events__hero-photo {
 
   .hero__cta-group .btn {
     width: 100%;
-    max-width: 280px;
+    max-width: 340px;
   }
 
   /* Services */
   .about__services {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* Stats */

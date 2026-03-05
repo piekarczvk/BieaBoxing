@@ -72,7 +72,9 @@ const App = {
     hamburger.addEventListener('click', () => {
       hamburger.classList.toggle('navbar__hamburger--active');
       menu.classList.toggle('navbar__menu--open');
-      document.body.style.overflow = menu.classList.contains('navbar__menu--open') ? 'hidden' : '';
+      const isOpen = menu.classList.contains('navbar__menu--open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // Close menu when a link is clicked
@@ -80,6 +82,7 @@ const App = {
       link.addEventListener('click', () => {
         hamburger.classList.remove('navbar__hamburger--active');
         menu.classList.remove('navbar__menu--open');
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
@@ -206,14 +209,26 @@ const App = {
       return `<tr><td><strong>${row.time}</strong></td>${cells}</tr>`;
     }).join('');
 
-    this._renderMobileSchedule(classes, days);
+    // Highlight today's column on desktop table
+    const todayIndex = (new Date().getDay() + 6) % 7; // Mon=0 … Sun=6
+    const headers = document.querySelectorAll('#scheduleTable thead th');
+    if (headers[todayIndex + 1]) {
+      headers[todayIndex + 1].classList.add('col-today');
+    }
+    document.querySelectorAll('#scheduleBody tr').forEach((row) => {
+      if (row.cells[todayIndex + 1]) {
+        row.cells[todayIndex + 1].classList.add('col-today');
+      }
+    });
+
+    this._renderMobileSchedule(classes, days, todayIndex);
   },
 
-  _renderMobileSchedule(classes, days) {
+  _renderMobileSchedule(classes, days, todayIndex) {
     const view = document.getElementById('scheduleDayView');
     if (!view) return;
 
-    view.innerHTML = days.map((day) => {
+    view.innerHTML = days.map((day, i) => {
       const dayClasses = classes.filter((row) => row[day] && row[day].type);
       if (dayClasses.length === 0) return '';
 
@@ -230,7 +245,8 @@ const App = {
       }).join('');
 
       const dayLabel = I18n.t(siteContent.schedule[day]);
-      return `<div class="schedule__list-day">
+      const todayClass = i === todayIndex ? ' schedule__list-day--today' : '';
+      return `<div class="schedule__list-day${todayClass}">
         <p class="schedule__list-day-name">${dayLabel}</p>
         ${items}
       </div>`;

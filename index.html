@@ -257,7 +257,7 @@
           <span class="lang-toggle__option" data-lang="en">EN</span>
         </button>
 
-        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu">
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
           <span></span>
           <span></span>
           <span></span>
@@ -372,14 +372,14 @@
         <table class="schedule__table" id="scheduleTable">
           <thead>
             <tr>
-              <th data-i18n="schedule.time">Ora</th>
-              <th data-i18n="schedule.mon">Luni</th>
-              <th data-i18n="schedule.tue">Marți</th>
-              <th data-i18n="schedule.wed">Miercuri</th>
-              <th data-i18n="schedule.thu">Joi</th>
-              <th data-i18n="schedule.fri">Vineri</th>
-              <th data-i18n="schedule.sat">Sâmbătă</th>
-              <th data-i18n="schedule.sun">Duminică</th>
+              <th scope="col" data-i18n="schedule.time">Ora</th>
+              <th scope="col" data-i18n="schedule.mon">Luni</th>
+              <th scope="col" data-i18n="schedule.tue">Marți</th>
+              <th scope="col" data-i18n="schedule.wed">Miercuri</th>
+              <th scope="col" data-i18n="schedule.thu">Joi</th>
+              <th scope="col" data-i18n="schedule.fri">Vineri</th>
+              <th scope="col" data-i18n="schedule.sat">Sâmbătă</th>
+              <th scope="col" data-i18n="schedule.sun">Duminică</th>
             </tr>
           </thead>
           <tbody id="scheduleBody">
@@ -460,22 +460,25 @@
       </div>
 
       <!-- Fight record table -->
+      <div class="events__table-outer">
       <div class="events__table-wrap reveal">
         <table class="events__table" id="fightTable">
           <thead>
             <tr>
-              <th>#</th>
-              <th data-i18n="events.date">Data</th>
-              <th data-i18n="events.opponent">Adversar</th>
-              <th data-i18n="events.record">Record</th>
-              <th data-i18n="events.location">Locație</th>
-              <th data-i18n="events.result">Rezultat</th>
+              <th scope="col">#</th>
+              <th scope="col" data-i18n="events.date">Data</th>
+              <th scope="col" data-i18n="events.opponent">Adversar</th>
+              <th scope="col" data-i18n="events.record">Record</th>
+              <th scope="col" data-i18n="events.location">Locație</th>
+              <th scope="col" data-i18n="events.result">Rezultat</th>
             </tr>
           </thead>
           <tbody id="fightBody">
             <!-- Populated by JS from content.js -->
           </tbody>
         </table>
+      </div>
+      <p class="events__scroll-hint">← scroll →</p>
       </div>
     </div>
   </section>
