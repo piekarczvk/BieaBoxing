@@ -73,6 +73,7 @@ const siteContent = {
     tag:   { ro: "Program",        en: "Schedule" },
     title: { ro: "Program Clase",  en: "Class Schedule" },
     note:  { ro: "* Programul poate suferi modificări. Contactează-ne pentru detalii.", en: "* Schedule may change. Contact us for details." },
+    today: { ro: "azi", en: "today" },
     time:  { ro: "Ora",      en: "Time" },
     mon:   { ro: "Luni",     en: "Monday" },
     tue:   { ro: "Marți",    en: "Tuesday" },

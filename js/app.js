@@ -17,6 +17,7 @@ const App = {
     this.renderFightRecord();
     this.setupContactForm();
     this.setupSmoothScroll();
+    this.setupBackToTop();
     this.setCurrentYear();
 
     // Initialize i18n last (after DOM is populated)
@@ -206,7 +207,7 @@ const App = {
         return `<td><div class="schedule__cell schedule__cell--${cell.type}"><span class="schedule__cell-name">${name}</span><span class="schedule__cell-time">${timeRange}</span></div></td>`;
       }).join('');
 
-      return `<tr><td><strong>${row.time}</strong></td>${cells}</tr>`;
+      return `<tr><td class="schedule__time-cell"><strong>${row.time}</strong></td>${cells}</tr>`;
     }).join('');
 
     // Highlight today's column on desktop table
@@ -214,6 +215,8 @@ const App = {
     const headers = document.querySelectorAll('#scheduleTable thead th');
     if (headers[todayIndex + 1]) {
       headers[todayIndex + 1].classList.add('col-today');
+      const todayLabel = I18n.t(siteContent.schedule.today);
+      headers[todayIndex + 1].insertAdjacentHTML('beforeend', `<span class="col-today-badge">${todayLabel}</span>`);
     }
     document.querySelectorAll('#scheduleBody tr').forEach((row) => {
       if (row.cells[todayIndex + 1]) {
@@ -247,7 +250,10 @@ const App = {
       const dayLabel = I18n.t(siteContent.schedule[day]);
       const todayClass = i === todayIndex ? ' schedule__list-day--today' : '';
       return `<div class="schedule__list-day${todayClass}">
-        <p class="schedule__list-day-name">${dayLabel}</p>
+        <div class="schedule__list-day-header">
+          <p class="schedule__list-day-name">${dayLabel}</p>
+          <span class="schedule__list-day-count">${dayClasses.length}</span>
+        </div>
         ${items}
       </div>`;
     }).join('');
@@ -343,6 +349,22 @@ const App = {
         const text = encodeURIComponent(`Buna ziua, sunt ${name}. ${message}`);
         window.open(`https://wa.me/40741744063?text=${text}`, '_blank');
       }
+    });
+  },
+
+  // ========================================
+  // BACK TO TOP BUTTON
+  // ========================================
+  setupBackToTop() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('back-to-top--visible', window.scrollY > 400);
+    }, { passive: true });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   },
 
