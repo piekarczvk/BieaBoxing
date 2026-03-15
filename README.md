@@ -1,79 +1,79 @@
 # Biea Boxing — Website
 
-## Cum să editezi conținutul / How to edit content
+## How to edit content
 
-**Singurul fișier pe care trebuie să-l editezi este `js/content.js`**
+**The only file you need to edit is `js/content.js`**
 
-### Pași:
+### Steps:
 
-1. Deschide fișierul `js/content.js` cu orice editor de text (Notepad, TextEdit, VS Code)
-2. Găsește textul pe care vrei să-l schimbi
-3. Modifică DOAR textul dintre ghilimele `" "`
-4. Salvează fișierul
-5. Reîncarcă pagina în browser (F5 sau Ctrl+R)
+1. Open `js/content.js` with any text editor (Notepad, TextEdit, VS Code)
+2. Find the text you want to change
+3. Modify ONLY the text between the quotes `" "`
+4. Save the file
+5. Reload the page in the browser (F5 or Ctrl+R)
 
-### Exemple:
+### Examples:
 
-**Schimbarea unui text:**
+**Changing a text:**
 ```js
-// Înainte:
+// Before:
 title: { ro: "Text vechi", en: "Old text" },
 
-// După:
+// After:
 title: { ro: "Text nou", en: "New text" },
 ```
 
-**Adăugarea unui antrenor:**
-1. Deschide `js/content.js`
-2. Găsește secțiunea `trainers > list`
-3. Copiază un bloc existent și schimbă datele:
+**Adding a trainer:**
+1. Open `js/content.js`
+2. Find the `trainers > list` section
+3. Copy an existing block and change the data:
 ```js
 {
-  name: "Nume Antrenor",
+  name: "Trainer Name",
   specialty: { ro: "Specializare",  en: "Specialty" },
   bio:       { ro: "Bio în română", en: "Bio in English" },
-  image: "images/trainers/nume-antrenor.jpg",
+  image: "images/trainers/trainer-name.jpg",
 },
 ```
-4. Pune poza antrenorului în folderul `images/trainers/`
+4. Put the trainer's photo in the `images/trainers/` folder
 
-**Actualizarea programului de clase:**
-- Găsește secțiunea `schedule > classes` în `content.js`
-- Fiecare rând are: `time`, `mon`, `tue`, `wed`, `thu`, `fri`, `sat`
-- Tipuri valide: `"boxing"`, `"kickboxing"`, `"mma"`, `"kids"`, `"selfdefense"`
+**Updating the class schedule:**
+- Find the `schedule > classes` section in `content.js`
+- Each row has: `time`, `mon`, `tue`, `wed`, `thu`, `fri`, `sat`
+- Valid types: `"boxing"`, `"kickboxing"`, `"mma"`, `"kids"`, `"selfdefense"`
 
-**Adăugarea unui meci în palmares:**
-- Găsește secțiunea `events > fights`
-- Adaugă un rând nou la începutul listei:
+**Adding a fight to the record:**
+- Find the `events > fights` section
+- Add a new row at the beginning of the list:
 ```js
-{ date: "2024-06-15", opponent: "Nume Adversar", record: "10-2-0", location: "Timișoara", result: "W", method: "WTKO" },
+{ date: "2024-06-15", opponent: "Opponent Name", record: "10-2-0", location: "Timișoara", result: "W", method: "WTKO" },
 ```
 
-## Structura fișierelor
+## File structure
 
 ```
 BieaBoxing/
-├── index.html         ← Pagina principală (NU edita)
-├── css/style.css      ← Stiluri (NU edita)
+├── index.html         ← Main page (DO NOT edit)
+├── css/style.css      ← Styles (DO NOT edit)
 ├── js/
-│   ├── content.js     ← ✏️ EDITEAZĂ ACEST FIȘIER pentru text
-│   ├── i18n.js        ← Sistem de traduceri (NU edita)
-│   └── app.js         ← Logică site (NU edita)
+│   ├── content.js     ← ✏️ EDIT THIS FILE for text
+│   ├── i18n.js        ← Translation system (DO NOT edit)
+│   └── app.js         ← Site logic (DO NOT edit)
 ├── images/
-│   ├── hero/          ← Poze hero (fundal pagină principală)
-│   ├── trainers/      ← Poze antrenori
-│   └── events/        ← Poze evenimente
-└── README.md          ← Acest fișier
+│   ├── hero/          ← Hero images (main page background)
+│   ├── trainers/      ← Trainer photos
+│   └── events/        ← Event photos
+└── README.md          ← This file
 ```
 
-## Cum să adaugi/schimbi poze
+## How to add/change images
 
-1. Pune poza în folderul potrivit (`images/trainers/`, `images/hero/`, etc.)
-2. Folosește numele fișierului (fără spații, cu cratimă) de ex. `flavius-biea.jpg`
-3. Actualizează calea în `content.js`, de ex. `image: "images/trainers/flavius-biea.jpg"`
+1. Put the image in the appropriate folder (`images/trainers/`, `images/hero/`, etc.)
+2. Use the filename (no spaces, use hyphens) e.g. `flavius-biea.jpg`
+3. Update the path in `content.js`, e.g. `image: "images/trainers/flavius-biea.jpg"`
 
-## Formularul de contact
+## Contact form
 
-Formularul de contact trimite mesajul prin WhatsApp. Dacă vrei să primești mesajele pe email:
-1. Creează un cont gratuit pe [Formspree](https://formspree.io)
-2. Înlocuiește `YOUR_FORM_ID` în `index.html` cu ID-ul tău Formspree
+The contact form sends messages via WhatsApp. If you want to receive messages by email:
+1. Create a free account on [Formspree](https://formspree.io)
+2. Replace `YOUR_FORM_ID` in `index.html` with your Formspree ID
