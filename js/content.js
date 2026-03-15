@@ -315,6 +315,15 @@ const siteContent = {
   },
 
   // ============================
+  // COOKIE CONSENT BANNER
+  // ============================
+  cookies: {
+    message:  { ro: "Folosim cookie-uri pentru a îmbunătăți experiența ta pe site.", en: "We use cookies to improve your experience on this site." },
+    accept:   { ro: "Accept",        en: "Accept" },
+    decline:  { ro: "Refuz",         en: "Decline" },
+  },
+
+  // ============================
   // WHATSAPP BUTTON
   // ============================
   whatsapp: {

@@ -1,2 +1,18 @@
+# Environment
 .env
+
+# Build output
 dist/
+out/
+
+# Lighthouse reports
+*.report.html
+*.report.json
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/
+*.swp
+*.swo
