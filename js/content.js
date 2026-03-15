@@ -67,6 +67,14 @@ const siteContent = {
   },
 
   // ============================
+  // SPONSORS
+  // ============================
+  sponsors: {
+    tag:   { ro: "Parteneri",            en: "Partners" },
+    title: { ro: "Sponsori & Parteneri", en: "Sponsors & Partners" },
+  },
+
+  // ============================
   // SCHEDULE
   // ============================
   schedule: {
