@@ -3104,3 +3104,193 @@ html.theme-electric .events__hero-photo {
     padding: 16px;
   }
 }
+
+/* ============================================================
+   TRAINER CARD — Profile link button
+   ============================================================ */
+.trainer-card__profile-btn {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: 'Teko', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent, #D4FF00);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, opacity 0.2s;
+}
+.trainer-card__profile-btn:hover {
+  border-color: var(--accent, #D4FF00);
+  opacity: 0.85;
+}
+
+/* ============================================================
+   TRAINER PROFILE PAGE
+   ============================================================ */
+.trainer-profile {
+  padding-top: calc(var(--navbar-height, 72px) + 60px);
+  padding-bottom: 100px;
+  min-height: 100vh;
+}
+
+.trainer-profile__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent, #D4FF00);
+  text-decoration: none;
+  font-family: 'Teko', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 52px;
+  transition: opacity 0.2s;
+}
+.trainer-profile__back:hover { opacity: 0.75; }
+
+.trainer-profile__hero {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 64px;
+  align-items: start;
+  margin-bottom: 80px;
+}
+
+.trainer-profile__photo {
+  border-radius: 4px;
+  overflow: hidden;
+}
+.trainer-profile__photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.trainer-profile__meta {
+  padding-top: 8px;
+}
+
+.trainer-profile__specialty {
+  display: inline-block;
+  background: var(--accent, #D4FF00);
+  color: #000;
+  font-family: 'Teko', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  margin-bottom: 20px;
+}
+
+.trainer-profile__name {
+  font-family: 'Bebas Neue', 'Teko', sans-serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--text-primary, #fff);
+  margin: 0 0 28px;
+}
+
+.trainer-profile__bio {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-secondary, rgba(255,255,255,0.72));
+  max-width: 600px;
+}
+
+.trainer-profile__divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.09);
+  margin: 60px 0;
+}
+
+.trainer-profile__section-title {
+  font-family: 'Bebas Neue', 'Teko', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: 0.05em;
+  color: var(--text-primary, #fff);
+  margin: 0 0 32px;
+}
+
+.trainer-schedule {
+  width: 100%;
+  border-collapse: collapse;
+}
+.trainer-schedule th,
+.trainer-schedule td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.trainer-schedule th {
+  font-family: 'Teko', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary, rgba(255,255,255,0.45));
+  padding-bottom: 14px;
+}
+.trainer-schedule td {
+  font-size: 0.95rem;
+  color: var(--text-primary, #fff);
+  vertical-align: middle;
+}
+.trainer-schedule .schedule__cell {
+  display: inline-block;
+  font-size: 0.85rem;
+}
+
+.trainer-profile__no-schedule {
+  color: var(--text-secondary, rgba(255,255,255,0.55));
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.trainer-profile__private {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 48px 40px;
+  text-align: center;
+  margin-top: 64px;
+}
+.trainer-profile__private h2 {
+  font-family: 'Bebas Neue', 'Teko', sans-serif;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  letter-spacing: 0.05em;
+  color: var(--text-primary, #fff);
+  margin: 0 0 12px;
+}
+.trainer-profile__private p {
+  color: var(--text-secondary, rgba(255,255,255,0.65));
+  margin: 0 0 28px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 860px) {
+  .trainer-profile__hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .trainer-profile__photo {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 480px) {
+  .trainer-profile__private {
+    padding: 32px 24px;
+  }
+  .trainer-schedule th,
+  .trainer-schedule td {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+  }
+}

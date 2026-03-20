@@ -186,41 +186,76 @@ const siteContent = {
     list: [
       {
         name: "Flavius Biea",
+        slug: "flavius-biea",
         specialty: { ro: "Antrenor Box — Licențiat", en: "Licensed Boxing Coach" },
         bio: {
           ro: "Antrenamente cu clasa, grup restrâns și private. Box Amator: 316 meciuri (298V / 18Î), 8× Campion Național, 3× Campion European, 1× Campion Mondial, 2× Vice-campion Mondial. Box Profesionist: 24V / 2Î — 1× Campion WBA Continental, 2× WBC Continental, 4× IBA Intercontinental, 1× Campion Mondial IBA.",
           en: "Group, small-group and private sessions. Amateur Boxing: 316 bouts (298W / 18L), 8× National Champion, 3× European Champion, 1× World Champion, 2× World Runner-up. Pro Boxing: 24W / 2L — 1× WBA Continental, 2× WBC Continental, 4× IBA Intercontinental, 1× IBA World Champion.",
         },
         image: "images/trainers/flavius-biea.jpeg",
+        schedule: [
+          { days: { ro: "Luni, Miercuri, Vineri", en: "Mon, Wed, Fri" }, time: "18:00 – 19:30", class: { ro: "Grupa A — Box", en: "Group A — Boxing" }, type: "boxing-a" },
+        ],
       },
       {
         name: "Claudiu Ienci",
+        slug: "claudiu-ienci",
         specialty: { ro: "Antrenor Box", en: "Boxing Coach" },
         bio: {
           ro: "Antrenor Box cu 4 ani experiență. Antrenamente cu clasa și private. Box Amator: 8 ani experiență, 2× Vicecampion Național, multiplu medaliat la turnee naționale și internaționale. Box Profesionist: 5 victorii (4 KO) și 1 înfrângere.",
           en: "Boxing Coach with 4 years of coaching experience. Group and private sessions. Amateur Boxing: 8 years experience, 2× National Runner-up, multiple medals at national and international tournaments. Pro Boxing: 5 wins (4 KO) and 1 loss.",
         },
         image: "images/trainers/claudiu-ienci.jpeg",
+        schedule: [
+          { days: { ro: "Marți, Joi", en: "Tue, Thu" }, time: "18:30 – 20:00", class: { ro: "Grupa 5 — Box", en: "Group 5 — Boxing" }, type: "boxing-5" },
+          { days: { ro: "Marți, Joi", en: "Tue, Thu" }, time: "20:00 – 21:30", class: { ro: "Grupa B — Box", en: "Group B — Boxing" }, type: "boxing-b" },
+          { days: { ro: "Sâmbătă", en: "Saturday" }, time: "13:00 – 14:30", class: { ro: "Grupa 5 — Box", en: "Group 5 — Boxing" }, type: "boxing-5" },
+          { days: { ro: "Sâmbătă", en: "Saturday" }, time: "18:00 – 19:30", class: { ro: "Grupa B — Box", en: "Group B — Boxing" }, type: "boxing-b" },
+        ],
       },
       {
         name: "Flavius Andrei",
+        slug: "flavius-andrei",
         specialty: { ro: "Antrenor MMA & Self Defense", en: "MMA & Self-Defense Coach" },
         bio: {
           ro: "Antrenamente cu grupul și private. 3× Campion Național la lupte libere, 6× Vicecampion Național lupte libere, 2014–2019 component al lotului național de lupte libere, 2020 luptător profesionist MMA.",
           en: "Group and private sessions. 3× National Freestyle Wrestling Champion, 6× National Runner-up, 2014–2019 member of the national wrestling team, 2020 professional MMA fighter.",
         },
         image: "images/trainers/flavius-andrei.jpeg",
+        schedule: [],
       },
       {
         name: "Mariana Condescu",
+        slug: "mariana-condescu",
         specialty: { ro: "Instructor Box & Kickbox", en: "Boxing & Kickboxing Instructor" },
         bio: {
           ro: "Instructor Box și Kickbox cu 4 ani experiență. Antrenamente cu clasa și private. 10 ani Karate Wu-Thao (Centură Verde), 2 ani Karate Shotokan, 7 ani Kickbox — multiplă medaliată la competiții naționale (3 medalii Locul 1), 4 ani Box.",
           en: "Boxing & Kickboxing Instructor with 4 years of coaching experience. Group and private sessions. 10 years Karate Wu-Thao (Green Belt), 2 years Karate Shotokan, 7 years Kickboxing — multiple national medals (3× 1st place), 4 years Boxing.",
         },
         image: "images/trainers/mariana-condescu.jpeg",
+        schedule: [
+          { days: { ro: "Luni, Miercuri, Vineri", en: "Mon, Wed, Fri" }, time: "20:00 – 21:30", class: { ro: "Kickbox", en: "Kickboxing" }, type: "kickboxing" },
+          { days: { ro: "Marți, Joi", en: "Tue, Thu" }, time: "17:30 – 18:30", class: { ro: "Copii (4–12 ani)", en: "Kids (4–12 yrs)" }, type: "kids" },
+          { days: { ro: "Duminică", en: "Sunday" }, time: "15:00 – 16:00", class: { ro: "Copii (4–12 ani)", en: "Kids (4–12 yrs)" }, type: "kids" },
+        ],
       },
     ],
+  },
+
+  // ============================
+  // TRAINER PROFILE PAGE
+  // ============================
+  trainerPage: {
+    back:               { ro: "← Înapoi la Antrenori", en: "← Back to Trainers" },
+    viewProfile:        { ro: "Vezi Profilul →",        en: "View Profile →" },
+    scheduleTitle:      { ro: "Program de Antrenament", en: "Training Schedule" },
+    days:               { ro: "Zile",                   en: "Days" },
+    time:               { ro: "Ora",                    en: "Time" },
+    class:              { ro: "Clasă",                  en: "Class" },
+    contactForSchedule: { ro: "Contactați-ne pentru detalii despre program.", en: "Contact us for schedule details." },
+    privateTitle:       { ro: "Clase Private",          en: "Private Sessions" },
+    privateDesc:        { ro: "Contactați-ne pentru a programa o ședință privată cu acest antrenor.", en: "Contact us to book a private session with this trainer." },
+    privateCta:         { ro: "Programează o Ședință",  en: "Book a Session" },
   },
 
   // ============================

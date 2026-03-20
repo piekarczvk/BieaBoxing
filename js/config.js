@@ -20,6 +20,7 @@ const SITE_CONFIG = {
     index:    false,
     gallery:  false,
     schedule: false,
+    trainer:  false,
   },
 
 };

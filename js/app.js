@@ -307,6 +307,10 @@ const App = {
             </svg>
           </div>`;
 
+      const profileLink = trainer.slug
+        ? `<a href="trainer.html?trainer=${trainer.slug}" class="trainer-card__profile-btn">${I18n.t(siteContent.trainerPage.viewProfile)}</a>`
+        : '';
+
       return `
         <div class="trainer-card reveal">
           <div class="trainer-card__img-wrap">${imgHtml}</div>
@@ -314,6 +318,7 @@ const App = {
             <h3 class="trainer-card__name">${trainer.name}</h3>
             <p class="trainer-card__specialty">${I18n.t(trainer.specialty)}</p>
             <p class="trainer-card__bio">${I18n.t(trainer.bio)}</p>
+            ${profileLink}
           </div>
         </div>`;
     }).join('');

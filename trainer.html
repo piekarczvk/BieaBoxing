@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO Meta -->
+  <title>Antrenor | Biea Boxing Gym Timișoara</title>
+  <meta name="description" content="Profil antrenor Biea Boxing Gym Timișoara — box, kickboxing, MMA. Află mai multe despre antrenorii noștri și programul lor de antrenament.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Biea Boxing Gym">
+  <meta property="og:title" content="Antrenor | Biea Boxing Gym Timișoara">
+  <meta property="og:description" content="Profil antrenor Biea Boxing Gym Timișoara.">
+  <meta property="og:url" content="https://bieaboxing.ro/trainer.html">
+  <meta property="og:image" content="https://bieaboxing.ro/images/og-cover.jpg">
+
+  <!-- Theme & Favicon -->
+  <meta name="theme-color" content="#D4FF00">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥊</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&family=Teko:wght@400;500;600;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;900&family=Teko:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Always apply electric theme -->
+  <script>document.documentElement.classList.add('theme-electric');</script>
+</head>
+<body>
+
+  <noscript>
+    <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+  </noscript>
+
+  <header>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar navbar--scrolled" id="navbar" aria-label="Navigare principală">
+    <div class="navbar__container">
+      <a href="index.html" class="navbar__logo">
+        <span class="navbar__logo-text">BIEA BOXING</span>
+      </a>
+
+      <ul class="navbar__menu" id="navMenu">
+        <li><a href="index.html" class="navbar__link" data-i18n="nav.home">Acasă</a></li>
+        <li><a href="index.html#about" class="navbar__link" data-i18n="nav.about">Despre Noi</a></li>
+        <li><a href="schedule.html" class="navbar__link" data-i18n="nav.schedule">Program Clase</a></li>
+        <li><a href="index.html#trainers" class="navbar__link navbar__link--active" data-i18n="nav.trainers">Antrenori</a></li>
+        <li><a href="index.html#events" class="navbar__link" data-i18n="nav.events">Evenimente</a></li>
+        <li><a href="gallery.html" class="navbar__link" data-i18n="nav.gallery">Galerie</a></li>
+        <li><a href="index.html#contact" class="navbar__link" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div class="navbar__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-toggle__option lang-toggle__option--active" data-lang="ro">RO</span>
+          <span class="lang-toggle__divider">|</span>
+          <span class="lang-toggle__option" data-lang="en">EN</span>
+        </button>
+
+        <button class="navbar__hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  </header>
+
+  <main>
+  <!-- ========== TRAINER PROFILE ========== -->
+  <section class="trainer-profile" id="trainer-profile">
+    <div class="container">
+
+      <!-- Back link -->
+      <a href="index.html#trainers" class="trainer-profile__back" id="backBtn" data-i18n="trainerPage.back">← Înapoi la Antrenori</a>
+
+      <!-- Hero: photo + meta -->
+      <div class="trainer-profile__hero">
+        <div class="trainer-profile__photo">
+          <img id="profileImg" src="" alt="" loading="eager">
+        </div>
+
+        <div class="trainer-profile__meta">
+          <span class="trainer-profile__specialty" id="profileSpecialty"></span>
+          <h1 class="trainer-profile__name" id="profileName"></h1>
+          <p class="trainer-profile__bio" id="profileBio"></p>
+        </div>
+      </div>
+
+      <hr class="trainer-profile__divider">
+
+      <!-- Schedule -->
+      <div id="scheduleSection">
+        <h2 class="trainer-profile__section-title" id="scheduleTitle" data-i18n="trainerPage.scheduleTitle">Program de Antrenament</h2>
+        <div id="scheduleTableWrap"></div>
+      </div>
+
+      <!-- Private sessions CTA -->
+      <div class="trainer-profile__private">
+        <h2 id="privateTitle" data-i18n="trainerPage.privateTitle">Clase Private</h2>
+        <p id="privateDesc" data-i18n="trainerPage.privateDesc">Contactați-ne pentru a programa o ședință privată cu acest antrenor.</p>
+        <a href="https://wa.me/40741744063?text=Buna%20ziua%2C%20As%20dori%20sa%20programez%20o%20clasa%20privata."
+           class="btn btn--primary"
+           target="_blank"
+           rel="noopener"
+           data-i18n="trainerPage.privateCta">Programează o Ședință</a>
+      </div>
+
+    </div>
+  </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <span class="footer__logo">BIEA BOXING</span>
+          <p class="footer__tagline" data-i18n="footer.tagline">Sala de box profesionistă din Timișoara — Box, Kickboxing, MMA.</p>
+        </div>
+
+        <div class="footer__nav">
+          <h3 class="footer__heading" data-i18n="footer.navTitle">Navigare</h3>
+          <ul>
+            <li><a href="index.html" data-i18n="nav.home">Acasă</a></li>
+            <li><a href="index.html#about" data-i18n="nav.about">Despre Noi</a></li>
+            <li><a href="schedule.html" data-i18n="nav.schedule">Program Clase</a></li>
+            <li><a href="index.html#trainers" data-i18n="nav.trainers">Antrenori</a></li>
+            <li><a href="index.html#events" data-i18n="nav.events">Evenimente</a></li>
+            <li><a href="gallery.html" data-i18n="nav.gallery">Galerie</a></li>
+            <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__social">
+          <h3 class="footer__heading" data-i18n="footer.socialTitle">Social Media</h3>
+          <div class="footer__social-links">
+            <a href="https://www.facebook.com/BieaPromotion" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/flaviusbiea" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://twitter.com/FlaviusBiea" target="_blank" rel="noopener" aria-label="Twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>&copy; <span id="currentYear"></span> Biea Boxing. <span data-i18n="footer.rights">Toate drepturile rezervate.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== WHATSAPP FLOATING BUTTON ========== -->
+  <a href="https://wa.me/40741744063?text=Buna%20ziua%2C%20As%20dori%20mai%20multe%20detalii%20despre%20BieaBoxing%20Gym."
+     class="whatsapp-btn"
+     target="_blank"
+     rel="noopener"
+     aria-label="Contact WhatsApp"
+     data-i18n-attr="aria-label:whatsapp.ariaLabel">
+    <svg viewBox="0 0 32 32" fill="currentColor">
+      <path d="M16.004 0h-.008C7.174 0 0 7.176 0 16.004c0 3.5 1.132 6.742 3.052 9.378L1.056 31.2l6.042-1.94a15.9 15.9 0 0 0 8.906 2.704C24.826 31.964 32 24.788 32 16.004S24.826 0 16.004 0zm9.35 22.614c-.394 1.108-1.946 2.03-3.196 2.296-.856.182-1.974.326-5.736-1.232-4.812-1.994-7.91-6.874-8.148-7.194-.23-.32-1.882-2.506-1.882-4.78s1.19-3.392 1.614-3.858c.394-.434 1.036-.65 1.65-.65.198 0 .376.01.536.018.424.018.636.042.916.712.35.838 1.2 2.924 1.304 3.136.106.212.212.49.07.784-.132.3-.248.432-.46.678-.212.248-.414.436-.626.702-.194.23-.414.476-.172.9.24.424 1.074 1.77 2.306 2.866 1.586 1.412 2.922 1.85 3.336 2.054.318.158.696.132.946-.132.318-.338.712-.9 1.114-1.454.284-.396.644-.446.992-.302.354.136 2.238 1.056 2.622 1.248.384.194.64.288.734.448.094.16.094.924-.3 2.032z"/>
+    </svg>
+    <span class="whatsapp-btn__tooltip" data-i18n="whatsapp.tooltip">Contactează-ne pe WhatsApp</span>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/maintenance.js" data-page="trainer"></script>
+  <script src="js/content.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/theme.js"></script>
+
+  <script>
+    // ========================================
+    // TRAINER PROFILE PAGE — initialization
+    // ========================================
+    const TrainerPage = {
+      trainer: null,
+
+      init() {
+        this.setupNavbar();
+        this.setupMobileMenu();
+        this.setCurrentYear();
+        this.loadTrainer();
+
+        // Override App hooks used by I18n on language switch
+        window.App = {
+          renderSchedule() {},
+          renderTrainers() { TrainerPage.renderDynamic(); },
+          renderFightRecord() {},
+        };
+
+        I18n.init();
+      },
+
+      loadTrainer() {
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get('trainer');
+        const trainer = siteContent.trainers.list.find(function(t) { return t.slug === slug; });
+
+        if (!trainer) {
+          window.location.replace('index.html#trainers');
+          return;
+        }
+
+        this.trainer = trainer;
+
+        // Update page title
+        document.title = trainer.name + ' | Biea Boxing Gym';
+
+        // Set photo
+        const img = document.getElementById('profileImg');
+        img.src = trainer.image;
+        img.alt = trainer.name;
+
+        // Set static name
+        document.getElementById('profileName').textContent = trainer.name;
+
+        // Render language-dependent content
+        this.renderDynamic();
+        this.renderSchedule();
+      },
+
+      renderDynamic() {
+        const trainer = this.trainer;
+        if (!trainer) return;
+        const lang = I18n.currentLang;
+
+        const specialty = trainer.specialty[lang] || trainer.specialty.ro;
+        const bio = trainer.bio[lang] || trainer.bio.ro;
+
+        document.getElementById('profileSpecialty').textContent = specialty;
+        document.getElementById('profileBio').textContent = bio;
+
+        // Re-render schedule when language changes
+        this.renderSchedule();
+      },
+
+      renderSchedule() {
+        const trainer = this.trainer;
+        if (!trainer) return;
+        const lang = I18n.currentLang;
+        const container = document.getElementById('scheduleTableWrap');
+        const tp = siteContent.trainerPage;
+
+        if (!trainer.schedule || trainer.schedule.length === 0) {
+          container.innerHTML = '<p class="trainer-profile__no-schedule">' + (tp.contactForSchedule[lang] || tp.contactForSchedule.ro) + '</p>';
+          return;
+        }
+
+        const rows = trainer.schedule.map(function(s) {
+          const days = s.days[lang] || s.days.ro;
+          const cls  = s.class[lang] || s.class.ro;
+          return '<tr>'
+            + '<td>' + days + '</td>'
+            + '<td>' + s.time + '</td>'
+            + '<td><span class="schedule__cell schedule__cell--' + s.type + '">' + cls + '</span></td>'
+            + '</tr>';
+        }).join('');
+
+        container.innerHTML = '<div class="schedule__table-outer" style="overflow-x:auto;">'
+          + '<table class="schedule__table trainer-schedule">'
+          + '<thead><tr>'
+          + '<th>' + (tp.days[lang] || tp.days.ro) + '</th>'
+          + '<th>' + (tp.time[lang] || tp.time.ro) + '</th>'
+          + '<th>' + (tp.class[lang] || tp.class.ro) + '</th>'
+          + '</tr></thead>'
+          + '<tbody>' + rows + '</tbody>'
+          + '</table></div>';
+      },
+
+      setupNavbar() {
+        const navbar = document.getElementById('navbar');
+        if (!navbar) return;
+        window.addEventListener('scroll', function() {
+          navbar.classList.toggle('navbar--scrolled', window.scrollY > 60);
+        }, { passive: true });
+      },
+
+      setupMobileMenu() {
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('navMenu');
+        if (!hamburger || !menu) return;
+
+        hamburger.addEventListener('click', function() {
+          hamburger.classList.toggle('navbar__hamburger--active');
+          menu.classList.toggle('navbar__menu--open');
+          var isOpen = menu.classList.contains('navbar__menu--open');
+          hamburger.setAttribute('aria-expanded', isOpen);
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        menu.querySelectorAll('.navbar__link').forEach(function(link) {
+          link.addEventListener('click', function() {
+            hamburger.classList.remove('navbar__hamburger--active');
+            menu.classList.remove('navbar__menu--open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          });
+        });
+      },
+
+      setCurrentYear() {
+        var el = document.getElementById('currentYear');
+        if (el) el.textContent = new Date().getFullYear();
+      },
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+      TrainerPage.init();
+    });
+  </script>
+</body>
+</html>
