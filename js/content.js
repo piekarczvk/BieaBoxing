@@ -225,6 +225,17 @@ const siteContent = {
         schedule: [],
       },
       {
+        name: "Gheorghe Tudosie",
+        slug: "gheorghe-tudosie",
+        specialty: { ro: "Antrenor Box", en: "Boxing Trainer" },
+        bio: {
+          ro: "Antrenor Box specializat în: Managementul Greutății, Coaching Box, Programe de Forță și Condiționare pentru sport, Antrenament pentru Evenimente Speciale (Tough Mudder, Maraton etc.).",
+          en: "Boxing Trainer specializing in: Weight Management, Boxing Coaching, Strength & Conditioning Programmes for sport, Special Event Training (Tough Mudder, Marathon etc.).",
+        },
+        image: "images/trainers/gheorghe-tudosie.jpeg",
+        schedule: [],
+      },
+      {
         name: "Mariana Condescu",
         slug: "mariana-condescu",
         specialty: { ro: "Instructor Box & Kickbox", en: "Boxing & Kickboxing Instructor" },
