@@ -374,9 +374,23 @@ html.theme-electric .schedule__cell--kickboxing {
   border-left: 2px solid rgba(224, 255, 0, 0.35);
 }
 
+html.theme-electric .schedule__cell--boxing-c {
+  background-color: rgba(236, 72, 153, 0.08);
+  color: rgba(236, 130, 190, 0.85);
+  border-left: 2px solid rgba(236, 72, 153, 0.4);
+}
+
+html.theme-electric .schedule__cell--women {
+  background-color: rgba(244, 63, 94, 0.08);
+  color: rgba(255, 130, 150, 0.85);
+  border-left: 2px solid rgba(244, 63, 94, 0.4);
+}
+
 html.theme-electric .schedule__cell--mma,
 html.theme-electric .schedule__cell--kids,
-html.theme-electric .schedule__cell--selfdefense {
+html.theme-electric .schedule__cell--selfdefense,
+html.theme-electric .schedule__cell--boxing-c,
+html.theme-electric .schedule__cell--women {
   border-radius: 0;
 }
 
@@ -1335,6 +1349,18 @@ button {
   background-color: rgba(147, 51, 234, 0.08);
   color: #A882C8;
   border-left: 2px solid rgba(147, 51, 234, 0.5);
+}
+
+.schedule__cell--boxing-c {
+  background-color: rgba(236, 72, 153, 0.08);
+  color: #D87BA5;
+  border-left: 2px solid rgba(236, 72, 153, 0.5);
+}
+
+.schedule__cell--women {
+  background-color: rgba(244, 63, 94, 0.08);
+  color: #E8758A;
+  border-left: 2px solid rgba(244, 63, 94, 0.5);
 }
 
 .schedule__note {

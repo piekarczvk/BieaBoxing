@@ -190,7 +190,7 @@ const App = {
     if (!tbody) return;
 
     const classes = siteContent.schedule.classes;
-    const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+    const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat'];
 
     tbody.innerHTML = classes.map((row) => {
       const timeRange = row.endTime
