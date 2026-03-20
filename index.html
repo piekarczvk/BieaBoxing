@@ -698,8 +698,7 @@
     <span class="whatsapp-btn__tooltip" data-i18n="whatsapp.tooltip">Contactează-ne pe WhatsApp</span>
   </a>
 
-  <!-- Formular 230 -->
-  <script src="https://formular230.ro/share/99c5be73d80"></script>
+  <!-- Formular 230 — lazy-loaded on demand to avoid blocking page load -->
   <script>
     (function() {
       const banner = document.getElementById('formular230-banner');
@@ -715,8 +714,15 @@
         banner.classList.remove('is-visible');
       });
 
+      var f230Loaded = false;
       link.addEventListener('click', function(e) {
         e.preventDefault();
+        if (!f230Loaded) {
+          f230Loaded = true;
+          var s = document.createElement('script');
+          s.src = 'https://formular230.ro/share/99c5be73d80';
+          document.head.appendChild(s);
+        }
         modal.classList.add('is-open');
         document.body.style.overflow = 'hidden';
       });
@@ -732,12 +738,12 @@
   </script>
 
   <!-- Scripts -->
-  <script src="js/config.js"></script>
-  <script src="js/maintenance.js" data-page="index"></script>
-  <script src="js/content.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/theme.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/cookies.js"></script>
+  <script defer src="js/config.js"></script>
+  <script defer src="js/maintenance.js" data-page="index"></script>
+  <script defer src="js/content.js"></script>
+  <script defer src="js/i18n.js"></script>
+  <script defer src="js/theme.js"></script>
+  <script defer src="js/app.js"></script>
+  <script defer src="js/cookies.js"></script>
 </body>
 </html>
